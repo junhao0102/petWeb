@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style/index.css" />
+  <link rel="icon" type="image/x-icon" href="./svg/favicon.svg">
+  <title>峻豪的寵物世家</title>
+</head>
+<body>
+  <div class="title">
+    <img src="images/icon.jpg" id="title1" />
+    <h1 id="title2">寵物用品店</h1>
+    <button class="btn">
+      <img src="svg/purchase.svg" >
+    </button>
+    <button class="btn">
+      <img src="./svg/info.svg" >
+    </button>
+    <button class="btn">
+      <img src="./svg/search.svg" >
+    </button>
+  </div>
+  <nav>
+    <a>關於我們</a>
+    <a>新品上市</a>
+    <a>熱銷TOP5</a>
+    <a>狗狗專區</a>
+    <a>貓咪專區</a>
+    <a>毛孩專欄</a>
+    <a>實體通路</a>
+    <a>購物須知</a>
+  </nav>
+
+  <div id="slide">
+    <img src="/images/slide1.jpg" class="slide" />
+    <img src="/images/slide2.jpg" class="slide" />
+    <img src="/images/slide3.jpg" class="slide" />
+    <img src="/images/slide4.jpg" class="slide" />
+    <img src="/images/slide5.jpg" class="slide" />
+    <button id="prev">&lt;</button>
+    <button id="next">&gt;</button>
+  </div>
+  <h1 class="subtitle">
+    <span class="line">...................................</span>
+    TOP熱銷商品
+    <span class="line">...................................</span>
+  </h1>
+
+  <div class="row" id="row1"></div>
+
+  <div class="more">
+    <button class="viewpre" onclick="handlePrevious()">&lt;</button>
+    <button class="viewnext" onclick="handleNext()">&gt;</button>
+    <button class="viewmore">查看更多...</button>
+  </div>
+  <h1 class="subtitle">
+    <span class="line">...................................</span>
+    貓咪專區
+    <span class="line">...................................</span>
+  </h1>
+
+  <div class="row" id="row2"></div>
+
+  <div class="more">
+    <button class="viewpre">&lt;</button>
+    <button class="viewnext">&gt;</button>
+    <button class="viewmore">查看更多...</button>
+  </div>
+
+  <h1 class="subtitle">
+    <span class="line">...................................</span>
+    狗狗專區
+    <span class="line">...................................</span>
+  </h1>
+
+  <div class="row" id="row3"></div>
+
+  <div class="more">
+    <button class="viewpre">&lt;</button>
+    <button class="viewnext">&gt;</button>
+    <button class="viewmore">查看更多...</button>
+  </div>
+
+  <script src="./scripts/index.js"></script>
+</body>
+
+</html>

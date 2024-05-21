@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./svg/backstage.svg">
+    <link rel="stylesheet" href="./style/Backstage.css">
+    <title>寵物世家的後臺系統</title>
+</head>
+
+<body>
+    <div class="title">
+        <img src="images/icon.jpg" />
+        <h1>寵物世家後臺系統</h1>
+    </div>
+    <div class="subtitle">
+        <h1>請上傳商品資訊:</h1>
+    </div>
+
+    <form id="product" enctype="multipart/form-data" method="post" class="product" action="your_action_url_here">
+        <label for="name">名稱:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="price">價格:</label>
+        <input type="number" id="price" name="price" required />
+        <label for="image">圖片:</label>
+        <input type="file" id="image" name="image" accept="image/jpeg, image/png" required />
+        <button type="submit">點此上傳</button>
+    </form>
+
+    <div class="subtitle">
+        <h1>請上傳輪播圖圖片:</h1>
+    </div>
+    <form id="carousel" enctype="multipart/form-data" method="post" class="carousel" action="url">
+        <label for="carousel">選擇輪播圖:</label>
+        </br></br></br>
+        <input type="file" id="carousel" name="carousel" accept="image/jpeg, image/png" />
+        <button type="submit">上傳</button>
+    </form>
+</body>
+
+</html>

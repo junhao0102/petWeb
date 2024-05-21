@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.title {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    font-family: '微軟正黑體', sans-serif;
+    background-color: #f0f0f0;
+}
+
+.title img {
+    width: 200px;
+    height: 200px;
+    left: -200px
+}
+
+.title h1 {
+    left: -50px
+}
+
+.subtitle {
+    padding: 10px 0 0 0;
+    width: 100%;
+    height: 50px;
+}
+
+
+.product,
+.carousel {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    height: 200px;
+    padding-top: 30px;
+    background-color: aquamarine;
+
+}
+
+.product input,
+.carousel input {
+    width: 370px;
+    height: 50px;
+    font-size: 30px;
+    margin: 0 50px 0 0;
+}
+
+.product label {
+    width: 80px;
+    height: 30px;
+    font-size: 30px;
+    font-family: '微軟正黑體', sans-serif;
+
+}
+
+.product button,
+.carousel button {
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    right: 200px;
+    bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: cornflowerblue;
+    color: white;
+    cursor: pointer;
+    transition: all 0.1s;
+    border-radius: 10px;
+    border: none;
+}
+
+.product button:hover,
+.carousel button:hover {
+    background-color: royalblue;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    border: 1px solid black;
+    font-size: 30px;
+
+}
+
+.carousel label {
+    width: 200px;
+    height: 30px;
+    font-size: 30px;
+    font-family: '微軟正黑體', sans-serif;
+}

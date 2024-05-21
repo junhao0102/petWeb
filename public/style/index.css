@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  height: auto;
+  width: 100%;
+}
+/* 標題 */
+.title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: antiquewhite;
+}
+#title1 {
+  width: 200px;
+  height: 200px;
+  margin-left: 25%;
+}
+
+#title2 {
+  padding: 50px 0 0 0;
+  margin: 0;
+  text-align: left;
+  font-size: 100px;
+  width: 500px;
+  height: 200px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(45deg, #007bff, #419b41);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* 轉播圖 */
+.btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.btn img{
+  display: flex;
+  flex-direction: row;
+  top: 25px;
+  left: 150px;
+  margin: 0;
+  height: 50px;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  width: 80px;
+  cursor: pointer;
+}
+nav {
+  width: 1500px;
+  margin: 0 0 0 0;
+  position: relative;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 15px 0 15px;
+  height: 50px;
+  width: 100px;
+  font-size: 35px;
+  font-family: fantasy;
+  color: cornflowerblue;
+  cursor: pointer;
+}
+#slide {
+  width: 100%;
+  height: 700px;
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+  padding: 50px;
+}
+.slide {
+  width: 1300px;
+  height: 100%;
+  border-radius: 50px;
+}
+
+#prev {
+  position: absolute;
+  left: 20px;
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: gray;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 50px;
+  height: 80px;
+  width: 80px;
+}
+
+#next {
+  position: absolute;
+  right: 20px;
+  font-size: 60px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: gray;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 50px;
+  height: 80px;
+  width: 80px;
+}
+
+/* 商品列 */
+
+.row{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: antiquewhite;
+  border: none;
+}
+.item {
+  width: 100%;
+  height: 450px;
+  margin: 20px 35px 0 35px;
+}
+.item button {
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  font-family: fantasy;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  background-color: dimgrey;
+}
+.item img {
+  width: 100%;
+  height: 300px;
+}
+
+.info {
+  font-family: fantasy;
+  font-size: 25px;
+  width: 100%;
+  margin: 0 0 5px 0;
+  padding: 0;
+  text-align: center;
+  justify-content: center;
+  border: none;
+  font-weight: bold;
+}
+.subtitle {
+  font-family: monospace;
+  font-size: 50px;
+  width: 100%;
+  margin: 50px 0 50px 0;
+  padding: 0;
+  text-align: center;
+  justify-content: center;
+  border: none;
+  color: gray;
+}
+
+.line {
+  border-top: gray 2px solid;
+  color: white;
+  padding: 0;
+  font-size: 15px;
+}
+
+.more{
+  align-items: center;
+  height: 100px;
+  margin: 50px 0 0 0;
+  padding: 0;
+}
+.viewpre {
+  position: relative;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  color: gray;
+  background-color: white;
+  border: gray 2px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 50px;
+  height:40px;
+  width:40px;
+  left:46.5%
+}
+.viewnext {
+  position: relative;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  color: gray;
+  background-color: white;
+  border: gray 2px solid;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 50px;
+  height:40px;
+  width:40px;
+  left:46.5%
+}
+.viewmore{
+  position: relative;
+  top:50px;
+  left: 37%;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  color: gray;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height:40px;
+  width:200px;
+}
