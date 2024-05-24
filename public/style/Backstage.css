@@ -1,94 +1,118 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
 }
 
 .title {
-    display: flex;
-    width: 100%;
-    height: 200px;
-    justify-content: center;
-    align-items: center;
-    font-size: 45px;
-    font-family: '微軟正黑體', sans-serif;
-    background-color: #f0f0f0;
+  display: flex;
+  width: 100%;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+  font-family: "微軟正黑體", sans-serif;
+  background-color: #f0f0f0;
 }
 
 .title img {
-    width: 200px;
-    height: 200px;
-    left: -200px
+  width: 200px;
+  height: 200px;
+  left: -200px;
 }
 
 .title h1 {
-    left: -50px
+  left: -50px;
 }
 
-.subtitle {
-    padding: 10px 0 0 0;
-    width: 100%;
-    height: 50px;
+.AddPro {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 600px;
 }
 
-
-.product,
-.carousel {
-    display: flex;
-    justify-content: start;
-    width: 100%;
-    height: 200px;
-    padding-top: 30px;
-    background-color: aquamarine;
-
+form.product h1 {
+  text-align: center;
 }
 
-.product input,
-.carousel input {
-    width: 370px;
-    height: 50px;
-    font-size: 30px;
-    margin: 0 50px 0 0;
+form.product,
+form.carousel {
+  background-color: #66cccc;
+  color: brown;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 20%;
+  border: 1px solid #e0e0e0;
+  height: 85%;
 }
 
-.product label {
-    width: 80px;
-    height: 30px;
-    font-size: 30px;
-    font-family: '微軟正黑體', sans-serif;
-
+form.product label,
+form.carousel label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 30px;
+  color: brown;
+  font-weight: bold;
 }
 
-.product button,
-.carousel button {
-    width: 200px;
-    height: 50px;
-    position: absolute;
-    right: 200px;
-    bottom: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: cornflowerblue;
-    color: white;
-    cursor: pointer;
-    transition: all 0.1s;
-    border-radius: 10px;
-    border: none;
+form.product input[type="text"],
+form.product input[type="number"] {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
-.product button:hover,
-.carousel button:hover {
-    background-color: royalblue;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-    border: 1px solid black;
-    font-size: 30px;
-
+form.product input[type="file"],
+form.carousel input[type="file"] {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.carousel label {
-    width: 200px;
-    height: 30px;
-    font-size: 30px;
-    font-family: '微軟正黑體', sans-serif;
+form.product button,
+form.carousel button {
+  background-color: darkcyan;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  width: 70%;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+}
+
+form.product button:hover,
+form.carousel button:hover {
+  text-align: center;
+  background-color: cornflowerblue;
+  font-size: 25px;
+  transform: scale(1.05);
+  letter-spacing: 10px;
+}
+
+.button-container {
+  text-align: center;
 }

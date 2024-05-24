@@ -14,29 +14,65 @@
         <img src="images/icon.jpg" />
         <h1>寵物世家後臺系統</h1>
     </div>
-    <div class="subtitle">
-        <h1>請上傳商品資訊:</h1>
+    <div class="AddPro">
+
+        <form id="famousForm" method="post" class="product" onsubmit="ProductSubmit(event, 'famous')">
+            <h1>添加熱門商品</h1>
+            <br/>
+            <label for="famousName">名稱:</label>
+            <input type="text" id="famousName" name="name" required />
+            <label for="famousPrice">價格:</label>
+            <input type="number" id="famousPrice" name="price" required />
+            <label for="famousImage">圖片:</label>
+            <input type="file" id="famousImage" name="image" accept="image/jpeg, image/png" required />
+            <div class="button-container">
+                <button type="submit">點此上傳</button>
+            </div>
+        </form>
+
+        <form id="catForm" method="post" class="product" onsubmit="ProductSubmit(event, 'cat')">
+            <h1>添加貓貓系列商品</h1>
+            <br/>
+            <label for="catName">名稱:</label>
+            <input type="text" id="catName" name="name" required />
+            <label for="catPrice">價格:</label>
+            <input type="number" id="catPrice" name="price" required />
+            <label for="catImage">圖片:</label>
+            <input type="file" id="catImage" name="image" accept="image/jpeg, image/png" required />
+            <div class="button-container">
+                <button type="submit">點此上傳</button>
+            </div>
+        </form>
+
+        <form id="dogForm" method="post" class="product" onsubmit="ProductSubmit(event, 'dog')">
+            <h1>添加狗狗系列商品</h1>
+            <br/>
+            <label for="dogName">名稱:</label>
+            <input type="text" id="dogName" name="name" required />
+            <label for="dogPrice">價格:</label>
+            <input type="number" id="dogPrice" name="price" required />
+            <label for="dogImage">圖片:</label>
+            <input type="file" id="dogImage" name="image" accept="image/jpeg, image/png" required />
+            <div class="button-container">
+                <button type="submit">點此上傳</button>
+            </div>
+        </form>
+        
+        <form id="carousel" enctype="multipart/form-data" method="post" class="carousel">
+            <h1>請上傳輪播圖圖片</h1>
+            </br></br></br></br></br></br>
+            <label for="carousel">圖片:</label>
+            <input type="file" id="carousel" name="carousel" accept="image/jpeg, image/png" />
+            <div class="button-container">
+                <button type="submit">點此上傳</button>
+            </div>
+        </form>
     </div>
 
-    <form id="product" enctype="multipart/form-data" method="post" class="product" action="your_action_url_here">
-        <label for="name">名稱:</label>
-        <input type="text" id="name" name="name" required />
-        <label for="price">價格:</label>
-        <input type="number" id="price" name="price" required />
-        <label for="image">圖片:</label>
-        <input type="file" id="image" name="image" accept="image/jpeg, image/png" required />
-        <button type="submit">點此上傳</button>
-    </form>
 
-    <div class="subtitle">
-        <h1>請上傳輪播圖圖片:</h1>
-    </div>
-    <form id="carousel" enctype="multipart/form-data" method="post" class="carousel" action="url">
-        <label for="carousel">選擇輪播圖:</label>
-        </br></br></br>
-        <input type="file" id="carousel" name="carousel" accept="image/jpeg, image/png" />
-        <button type="submit">上傳</button>
-    </form>
+
+    
 </body>
+<script src="./scripts/backstage.js"></script>
 
 </html>

@@ -1,18 +1,17 @@
-//創建資料表的SQL語句
 const createTableQuery = `
-CREATE TABLE IF NOT EXISTS products (
+CREATE TABLE IF NOT EXISTS AllProducts(
     id SERIAL PRIMARY KEY,
-    ProductName VARCHAR(255) NOT NULL,
-    Price DECIMAL NOT NULL,
-    Picture BYTEA NOT NULL
-);
-`;
+    Category  VARCHAR(255),
+    Product VARCHAR(255),
+    Price INT,
+    PicturePath TEXT
+);`;
+
 
 const insertProductQuery = `
-INSERT INTO products (ProductName, Price, Picture)
-VALUES ($1, $2, $3)
-RETURNING id;
+INSERT INTO AllProducts (Category, Product, Price, PicturePath)
+VALUES ($1, $2, $3, $4)
 `;
 
-
-module.exports = { createTableQuery, insertProductQuery};
+// const getProductQuery = `SELECT * FROM products;`
+module.exports = { createTableQuery, insertProductQuery/*, getProductQuery*/ };
