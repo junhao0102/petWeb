@@ -52,9 +52,11 @@ startServer().catch(err => {
     process.exit(1);
 });
 
-// 使用 express.static 中間件來提供靜態文件
+// 設置靜態資源目錄
 app.use(express.static(path.join(__dirname, 'public')));
 
+// http://localhost:3000/uploads 會映射到uploads 目錄。
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // 設定限制 body-parser 的請求主體大小
 app.use(bodyParser.json({ limit: '50mb' }));
@@ -82,19 +84,45 @@ app.post('/AddPro', async (req, res) => {
     }
 });
 
-// // 處理獲取產品的請求
-// app.get('/getProducts', async (req, res) => {
-//     try {
-//         const result = await pool.query(SQL.getProductQuery);
-//         res.status(200).json(result.rows);
-//         const ProductNames=[];
-//         const Prices =[]
-//         const picturePath=[]
+// 處理獲取產品的請求
+app.get('/getProducts', async (req, res) => {
+    try {
+        const result = await pool.query(SQL.getProductQuery);
+        let products = []
+        let famousArr = []
+        let catArr =[]
+        let dogArr =[]
 
+        for (let i = 0; i < result.rows.length; i++) {
+            let product = result.rows[i];
         
+            if (product.category === 'famous') {
+                let famousObj = {}
+                famousObj.name = product.product;
+                famousObj.price = product.price;
+                famousObj.src = product.picturepath;
+                famousArr.push(famousObj);
+            } else if (product.category === 'cat') {
+                let catObj = {}
+                catObj.name = product.product;
+                catObj.price = product.price;
+                catObj.src = product.picturepath
+                catArr.push(catObj);
+            } else if (product.category === 'dog') {
+                let dogObj = {}
+                dogObj.name = product.product;
+                dogObj.price = product.price;
+                dogObj.src = product.picturepath
+                dogArr.push(dogObj);
+            }
+        }
+        products.push(famousArr, catArr, dogArr)
+        res.status(200).json(products);
 
-//     } catch (error) {
-//         res.status(500).send('Internal server error');
-//     }
 
-// })
+
+    } catch (error) {
+        res.status(500).send('Internal server error');
+    }
+
+})

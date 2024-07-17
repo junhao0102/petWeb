@@ -44,98 +44,55 @@ const products = [
     { name: '益生菌', price: 299, src: './images/shop11.png' },
   ],
 ];
-//TOP熱銷商品
-document.addEventListener('DOMContentLoaded', function () {
-  // 取得所有容器
-  const container = document.getElementById('row1');
-  const product = products[0];
-  product.forEach((item) => {
-    // 建立產品 div
+function renderProducts(containerId, productList) {
+  const container = document.getElementById(containerId);
+  productList.forEach((item) => {
+    console.log(item.src);
     const productDiv = document.createElement('div');
     productDiv.className = 'item';
-    // 取得圖片
-    const img = document.createElement('img');
-    img.src = item.src;
-    img.alt = item.name;
-    // 取得產品名稱
-    const name = document.createElement('h2');
-    name.className = 'info';
-    name.textContent = item.name;
-    // 取得價格
-    const price = document.createElement('p');
-    price.className = 'info';
-    price.textContent = `NT$ ${item.price}`;
-    // 建立按鈕
-    const button = document.createElement('button');
-    button.textContent = '加入購物車';
-    productDiv.appendChild(img); // 將圖片加入到產品 div
-    productDiv.appendChild(name); // 將產品名稱加入到產品 div
-    productDiv.appendChild(price); // 將價格加入到產品 div
-    productDiv.appendChild(button); // 將按鈕加入到產品 div
-    container.appendChild(productDiv); // 將整個產品 div 加入到容器中
-  });
-});
 
-// 貓咪專區
-document.addEventListener('DOMContentLoaded', function () {
-  // 取得所有容器
-  const container = document.getElementById('row2');
-  const product = products[1];
-  product.forEach((item) => {
-    // 建立產品 div
-    const productDiv = document.createElement('div');
-    productDiv.className = 'item';
-    // 取得圖片
     const img = document.createElement('img');
     img.src = item.src;
     img.alt = item.name;
-    // 取得產品名稱
-    const name = document.createElement('h2');
-    name.className = 'info';
-    name.textContent = item.name;
-    // 取得價格
-    const price = document.createElement('p');
-    price.className = 'info';
-    price.textContent = `NT$ ${item.price}`;
-    // 建立按鈕
-    const button = document.createElement('button');
-    button.textContent = '加入購物車';
-    productDiv.appendChild(img); // 將圖片加入到產品 div
-    productDiv.appendChild(name); // 將產品名稱加入到產品 div
-    productDiv.appendChild(price); // 將價格加入到產品 div
-    productDiv.appendChild(button); // 將按鈕加入到產品 div
-    container.appendChild(productDiv); // 將整個產品 div 加入到容器中
-  });
-});
 
-// 狗狗專區
-document.addEventListener('DOMContentLoaded', function () {
-  // 取得所有容器
-  const container = document.getElementById('row3');
-  const product = products[2];
-  product.forEach((item) => {
-    // 建立產品 div
-    const productDiv = document.createElement('div');
-    productDiv.className = 'item';
-    // 取得圖片
-    const img = document.createElement('img');
-    img.src = item.src;
-    img.alt = item.name;
-    // 取得產品名稱
     const name = document.createElement('h2');
     name.className = 'info';
     name.textContent = item.name;
-    // 取得價格
+
     const price = document.createElement('p');
     price.className = 'info';
     price.textContent = `NT$ ${item.price}`;
-    // 建立按鈕
+
     const button = document.createElement('button');
     button.textContent = '加入購物車';
-    productDiv.appendChild(img); // 將圖片加入到產品 div
-    productDiv.appendChild(name); // 將產品名稱加入到產品 div
-    productDiv.appendChild(price); // 將價格加入到產品 div
-    productDiv.appendChild(button); // 將按鈕加入到產品 div
-    container.appendChild(productDiv); // 將整個產品 div 加入到容器中
+
+    productDiv.appendChild(img);
+    productDiv.appendChild(name);
+    productDiv.appendChild(price);
+    productDiv.appendChild(button);
+
+    container.appendChild(productDiv);
   });
+}
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('http://localhost:3000/getProducts')
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok ' + response.statusText);
+          }
+          return response.json();
+      })
+      .then(products => {
+          renderProducts('row1', products[0]); 
+          renderProducts('row2', products[1]); 
+          renderProducts('row3', products[2]); 
+      })
+      .catch(error => {
+          console.error('There has been a problem with your fetch operation:', error);
+      });
 });

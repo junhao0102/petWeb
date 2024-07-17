@@ -13,5 +13,7 @@ INSERT INTO AllProducts (Category, Product, Price, PicturePath)
 VALUES ($1, $2, $3, $4)
 `;
 
-// const getProductQuery = `SELECT * FROM products;`
-module.exports = { createTableQuery, insertProductQuery/*, getProductQuery*/ };
+const getProductQuery = `SELECT * FROM AllProducts;`;
+
+
+module.exports = { createTableQuery, insertProductQuery, getProductQuery};

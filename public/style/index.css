@@ -230,7 +230,7 @@ nav a {
 .viewmore{
   position: relative;
   top:50px;
-  left: 37%;
+  left: 39%;
   font-size: 25px;
   font-weight: bold;
   text-align: center;
@@ -241,4 +241,12 @@ nav a {
   transition: background-color 0.3s;
   height:40px;
   width:200px;
+}
+
+nav
+{
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: antiquewhite;
 }
